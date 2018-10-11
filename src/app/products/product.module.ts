@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import {ProductListComponent} from './product-list.component';
+import {ProductListComponent} from './product-list/product-list.component';
 import {ConvertToSpacesPipe} from '../shared/convert-to-spaces.pipe';
-import {ProductDetailComponent} from './product-detail.component';
+import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {RouterModule} from '@angular/router';
-import {ProductGuardService} from './product-guard.service';
+import {ProductGuardService} from './services/product-guard.service';
 import {WelcomeComponent} from '../home/welcome.component';
-import {ProductService} from './product.service';
+import {ProductService} from './services/product.service';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -14,10 +14,7 @@ import { SharedModule } from '../shared/shared.module';
       { path: 'products', component: ProductListComponent },
       { path: 'products/:id',
         canActivate: [ProductGuardService],
-        component: ProductDetailComponent },
-      { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+        component: ProductDetailComponent }
     ]),
     SharedModule
   ],
