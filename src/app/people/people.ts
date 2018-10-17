@@ -1,9 +1,9 @@
 export interface IPeople {
-  heroId: number;
-  heroName: string;
-  heroGender: string;
-  heroEyeColor: string;
-  heroHairColor: string;
-  heroHeight: number;
-  heroStarship: string;
+  url: string;
+  name: string;
+  gender: string;
+  eye_color: string;
+  hair_color: string;
+  height: number;
+  starships: any;
 }

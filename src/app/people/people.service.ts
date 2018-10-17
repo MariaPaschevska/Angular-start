@@ -14,7 +14,7 @@ export class PeopleService {
 
   getPeople(): Observable<IPeople[]> {
     return this._http.get<IPeople[]>(this._peopleUrl)
-      .do(data => console.log('All: ' + JSON.stringify(data)))
+      .do(data => console.log('People service is here: data.results ' + JSON.stringify(data.results)))
       .catch(this.handleError);
   }
 
@@ -22,6 +22,4 @@ export class PeopleService {
     console.log(err.message);
     return Observable.throw(err.message);
   }
-
-  constructor() { }
 }
