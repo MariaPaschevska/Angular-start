@@ -5,13 +5,12 @@ import {HttpClientModule} from '@angular/common/http';
 import {WelcomeComponent} from './home/welcome.component';
 import {RouterModule} from '@angular/router';
 import { ProductModule } from './products/product.module';
-import { PeopleComponent } from './people/people.component';
+import {PeopleModule} from './people/people.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    PeopleComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +20,8 @@ import { PeopleComponent } from './people/people.component';
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
-    ProductModule
+    ProductModule,
+    PeopleModule
   ],
   bootstrap: [AppComponent]
 })
