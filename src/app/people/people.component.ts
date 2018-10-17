@@ -21,5 +21,5 @@ export class PeopleComponent implements OnInit {
       this.people = people.results;
       },
         error => this.errorMessage = <any>error);
-  })
+  }
 }
