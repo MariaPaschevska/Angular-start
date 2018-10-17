@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IPeople} from './people';
+
 
 @Component({
   selector: 'pm-people',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class PeopleComponent implements OnInit {
 
   pageTitle = `Star Wars People`;
+  people: IPeople[];
 
   constructor() { }
 
