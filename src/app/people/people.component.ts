@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IPeople} from './people';
+import { PeopleService } from './people.service';
 
 
 @Component({
@@ -12,9 +13,13 @@ export class PeopleComponent implements OnInit {
   pageTitle = `Star Wars People`;
   people: IPeople[];
 
-  constructor() { }
+  constructor(private _peopleService: PeopleService) { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit(): void {
+    this._peopleService.getPeople()
+      .subscribe(people => {
+      this.people = people;
+      },
+        error => this.errorMessage = <any>error);
+  })
 }
