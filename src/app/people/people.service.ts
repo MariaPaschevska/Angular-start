@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {IPeople} from './people';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +11,8 @@ export class PeopleService {
 
   constructor(private _http: HttpClient) {}
 
-  getPeople(): Observable<IPeople[]> {
-    return this._http.get<IPeople[]>(this._peopleUrl)
+  getPeople(): Observable<any> {
+    return this._http.get<any>(this._peopleUrl)
       .do(data => console.log('People service is here: data.results ' + JSON.stringify(data.results)))
       .catch(this.handleError);
   }

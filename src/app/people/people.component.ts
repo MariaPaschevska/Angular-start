@@ -9,7 +9,7 @@ import { PeopleService } from './people.service';
   styleUrls: ['./people.component.css']
 })
 export class PeopleComponent implements OnInit {
-
+  errorMessage: string;
   pageTitle = `Star Wars People`;
   people: IPeople[];
 
