@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
 
   // setting the default values
-  constructor(private _productService: ProductService) {
+  constructor(private productService: ProductService) {
   }
 
   onRatingClicked(message: string): void {
@@ -45,7 +45,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._productService.getProducts()
+    this.productService.getProducts()
       .subscribe(products => {
           this.products = products;
           this.filteredProducts = this.products;

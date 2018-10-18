@@ -13,10 +13,10 @@ export class PeopleComponent implements OnInit {
   pageTitle = `Star Wars People`;
   people: IPeople[];
 
-  constructor(private _peopleService: PeopleService) { }
+  constructor(private peopleService: PeopleService) { }
 
   ngOnInit(): void {
-    this._peopleService.getPeople()
+    this.peopleService.getPeople()
       .subscribe(people => {
       this.people = people.results;
       },

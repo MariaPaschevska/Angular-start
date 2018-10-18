@@ -7,12 +7,12 @@ import {Observable} from 'rxjs';
 })
 export class PeopleService {
 
-  private _peopleUrl = 'https://swapi.co/api/people/';
+  private peopleUrl = 'https://swapi.co/api/people/';
 
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getPeople(): Observable<any> {
-    return this._http.get<any>(this._peopleUrl)
+    return this.http.get<any>(this.peopleUrl)
       .do(data => console.log('People service is here: data.results ' + JSON.stringify(data.results)))
       .catch(this.handleError);
   }

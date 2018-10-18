@@ -8,12 +8,12 @@ import {IProduct} from '../product';
 
 @Injectable()
 export class ProductService {
-  private _productUrl = 'api/products/products.json';
+  private productUrl = 'api/products/products.json';
 
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getProducts(): Observable<IProduct[]> {
-    return this._http.get<IProduct[]>(this._productUrl)
+    return this.http.get<IProduct[]>(this.productUrl)
       .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
