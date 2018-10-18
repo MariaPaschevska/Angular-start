@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { IProduct } from '../product';
+import { IProduct } from '../../interfaces/product';
 import {ProductService} from '../services/product.service';
 
 @Component ({
@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
 
   // setting the default values
-  constructor(private _productService: ProductService) {
+  constructor(private productService: ProductService) {
   }
 
   onRatingClicked(message: string): void {
@@ -45,7 +45,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._productService.getProducts()
+    this.productService.getProducts()
       .subscribe(products => {
           this.products = products;
           this.filteredProducts = this.products;

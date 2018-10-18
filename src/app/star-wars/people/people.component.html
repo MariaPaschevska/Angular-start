@@ -1,0 +1,31 @@
+<h1>{{pageTitle}}</h1>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Eye color</th>
+            <th>Hair color</th>
+            <th>Height</th>
+            <th>Starship</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hero of people">
+            <td>{{hero.name}}</td>
+            <td>{{hero.gender}}</td>
+            <td>{{hero.eye_color}}</td>
+            <td>{{hero.hair_color}}</td>
+            <td>{{hero.height}}</td>
+            <td>{{hero.starships}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
