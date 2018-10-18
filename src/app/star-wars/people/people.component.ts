@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IPeople} from './people';
+import {IPeople} from '../../interfaces/people';
 import { PeopleService } from './people.service';
 
 
